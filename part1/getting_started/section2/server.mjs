@@ -14,14 +14,27 @@ app.post('/', async (request, response) => {
 
   const body = request.body;
 
-  const streamIterator = await ollama.generate({
+  // const streamIterator = await ollama.generate({
+  //   model: 'llama3.2',
+  //   prompt: body.question,
+  //   stream: true
+  // });
+
+  const streamIterator = await ollama.chat({
     model: 'llama3.2',
-    prompt: body.question,
+    messages: [
+      {
+        role: 'user',
+        content: body.question
+      }
+    ],
     stream: true
   });
 
   for await (const chunk of streamIterator) {
-    response.write(chunk.response);
+    // response.write(chunk.response);
+    response.write(chunk.message.content);
+    //console.log(chunk.response);
   }
 
   response.end();

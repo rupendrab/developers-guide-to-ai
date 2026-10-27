@@ -1,0 +1,8 @@
+[project]
+name = "developers-guide-to-ai"
+version = "0.1.0"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "fastapi[standard]==0.119.0",
+    "ollama==0.6.0",
+]

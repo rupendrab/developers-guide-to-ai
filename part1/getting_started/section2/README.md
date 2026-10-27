@@ -49,3 +49,20 @@ In a separate terminal, navigate to the `part1/client` directory and run the fol
 Open your web browser and visit: http://localhost:5173
 
 Input a question and click `Call your API` to see the response streamed from Llama 3.2.
+
+### New Note
+
+Install using
+```bash
+npm install
+# If needed, run
+npm audit fix
+
+# Start the server using:
+node server.mjs
+```
+
+Test usinf this:
+```bash
+curl -N -X POST -H "Content-Type: application/json" -d '{"question": "Can you tell me about the Beatles in 500 words or less?"}' http://localhost:8000
+```

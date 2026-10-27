@@ -27,8 +27,8 @@ def generate_stream(question: str):
 
   for chunk in result:
     if chunk.response:
-      print('\nReturned GenerateResponse object for chunk:\n')
-      print(chunk.model_dump_json(indent=2))
+      # print('\nReturned GenerateResponse object for chunk:\n')
+      # print(chunk.model_dump_json(indent=2))
 
       yield chunk.response
 
